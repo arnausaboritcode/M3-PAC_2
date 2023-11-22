@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+        <object data="./assets/images/logo.svg" class="" id="" width="200px" height="auto"></object>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="members.html">Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cup.html">Our Cup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="contact.html">Contact</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">More soon!</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+      </nav>
+  </header>
+  <body>
+
+    <div class="container">
+        <h1 class="title text-center mb-4">Be the next <small class="text-muted">Bestie Member</small></h1>
+        <p class="text-center">Thank you for giving us a chance</p>
+    </div>
+    <div class="form-wrap mt-5">
+        <form
+         name="contact" method="POST" data-netlify="true" onSubmit="submit"
+         data-netlify-honeypot="bot-field" action="/success/success.html"
+        >
+        <input class="d-none" name="bot-field">
+            <div class="row mb-3">
+                <div class="col">
+                    <label id="name-label" for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" required>
+                  </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label id="number-label" for="number">Age <small>(optional)</small></label>
+                    <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" >
+                </div>
+                <div class="col">
+                    <label>current role</label>
+                            <select id="dropdown" name="role" class="form-control" required>
+                                <option disabled selected value>Select</option>
+                                <option value="student">Student</option>
+                                <option value="job">Full Time Job</option>
+                                <option value="learner">Full Time Learner</option>
+                                <option value="preferNo">Prefer not to say</option>
+                                <option value="other">Other</option>
+                            </select>
+                  </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label>Leave Message</label>
+						<textarea  id="comments" class="form-control" name="comment" placeholder="Enter your comment here..."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" id="submit" class="btn btn-primary btn-block">See you later!</button>
+                </div>
+            </div>
+          </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+  </body>
+</html>
