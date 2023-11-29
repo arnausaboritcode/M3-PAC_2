@@ -1,0 +1,249 @@
+@layer components.poster-footer, components.poster-main, components.poster-aside, components.poster-box, components.poster-header, components.poster-layout;
+
+@layer components {
+
+  @layer poster-layout {
+    .c-poster-container {
+      width: $content-max-width;
+      max-width: $body-max-width;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 6rem;
+      display: block;
+
+      container: grid /inline-size;
+    }
+  }
+
+  .c-poster-container {
+
+    @layer poster-header {
+      .c-poster-container_poster-header {
+        background-image: url('../images/footer.webp');
+        margin-bottom: $element-margin-bottom;
+        background-size: $image-background-size-auxiliary;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height:100px;
+
+        @media (max-width:992px) {
+          background-size: $image-background-size-primary;
+          background-repeat: repeat;
+      }
+
+      @supports (container:inline-size) {
+      @container grid (max-width:792px) {
+          background-size: $image-background-size-primary;
+          background-repeat: repeat;
+      }
+    }
+      }
+    }
+
+    @layer poster-box {
+      .c-poster-container_poster-box {
+        min-height: 170px;
+
+        &--1 {
+          background-image: url('../images/pictogram_one.webp');
+          margin-bottom: $element-margin-bottom;
+          background-size: $image-background-size-primary;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: #8e9552;
+        }
+
+        &--2 {
+          background-image: url('../images/pictogram_two.webp');
+          margin-bottom: $element-margin-bottom;
+          background-size: $image-background-size-primary;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: #657f64;
+
+        }
+
+        &--3 {
+          background-image: url('../images/pictogram_three.webp');
+          margin-bottom: $element-margin-bottom;
+          background-size: $image-background-size-primary;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: #526f2f;
+        }
+      }
+    }
+
+    @layer poster-aside {
+      .c-poster-container_poster-aside {
+        background-image: url('../images/prova_rotated.jpg'),linear-gradient(to right, #dcf400 50%, #0c552a 50%);
+        margin-bottom: $element-margin-bottom;
+        background-size: $image-background-size-primary;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 220px;
+
+        @media (max-width:380px) {
+          background-image: url('../images/aside_rotated.webp'); //Remove linear gradient because of small screens
+        }
+
+        @supports (container:inline-size) {
+        @container grid (max-width: 304px) {
+          background-image: url('../images/aside_rotated.webp'); //Remove linear gradient because of small screens
+        }
+      }
+      }
+
+    }
+
+    @layer poster-main {
+      .c-poster-container_poster-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        margin-bottom: $element-margin-bottom;
+        border-radius: $container-border-radius;
+        -webkit-border-radius: $container-border-radius;
+        -moz-border-radius: $container-border-radius;
+        box-shadow: $container-box-shadow;
+        -webkit-box-shadow: $container-box-shadow;
+        -moz-box-shadow: $container-box-shadow;
+
+        object {
+          width: $content-max-width;
+          max-width:$logo-max-width;
+        }
+      }
+    }
+
+    @layer poster-footer {
+      .c-poster-container_poster-footer {
+        background-image: url('../images/footer.webp');
+        background-size: $image-background-size-auxiliary;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height:100px;
+
+        @media (max-width:992px) {
+          background-size: $image-background-size-primary;
+          background-repeat: repeat;
+      }
+
+      @supports (container:inline-size) {
+      @container grid (max-width:792px) {
+          background-size: $image-background-size-primary;
+          background-repeat: repeat;
+      }
+    }
+    }
+  }
+}
+
+@supports (display:grid) {
+  @media (min-width: 992px)  {
+    @layer poster-layout {
+      .c-poster-container {
+        display: grid;
+        grid-template-rows: 100px 1fr 2fr 100px;
+        grid-template-columns: repeat(3, 1fr) 20%;
+        grid-gap: 20px;
+        width:100dvw;
+        max-width: $body-max-width;
+        margin-top: 6rem;
+      }
+    }
+
+    .c-poster-container {
+      @layer poster-header {
+        .c-poster-container_poster-header {
+          background-image: url('../images/footer.webp');
+          grid-row: 1 / 2;
+          grid-column: 1 / -1;
+          background-position: center;
+          background-size: $image-background-size-auxiliary;
+          background-repeat: no-repeat;
+        }
+
+      }
+
+      @layer poster-box {
+        .c-poster-container_poster-box {
+          min-height: 170px;
+
+          &--1 {
+            background-image: url('../images/pictogram_one.webp');
+            background-position: center;
+            background-size: $image-background-size-auxiliary;
+            background-repeat: no-repeat;
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+          }
+
+          &--2 {
+            background-image: url('../images/pictogram_two.webp');
+            background-position: center;
+            background-size: $image-background-size-auxiliary;
+            background-repeat: no-repeat;
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+          }
+
+          &--3 {
+            background-image: url('../images/pictogram_three.webp');
+            background-position: center;
+            background-size: $image-background-size-auxiliary;
+            background-repeat: no-repeat;
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+          }
+        }
+      }
+
+      @layer poster-aside {
+        .c-poster-container_poster-aside {
+          background-image: url('../images/aside.webp');
+          grid-row: 2 / span 2;
+          grid-column: 4 / 5;
+          background-position: center;
+          background-size: $image-background-size-auxiliary;
+          background-repeat: no-repeat;
+        }
+
+      }
+
+      @layer poster-main {
+        .c-poster-container_poster-main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          grid-row: 3 / 4;
+          grid-column: 1 / span 3;
+          min-height: 200px;
+
+          margin-bottom: $element-margin-bottom;
+          border-radius: $container-border-radius;
+          -webkit-border-radius: $container-border-radius;
+          -moz-border-radius: $container-border-radius;
+          box-shadow: $container-box-shadow;
+          -webkit-box-shadow: $container-box-shadow;
+          -moz-box-shadow: $container-box-shadow;
+        }
+      }
+
+      @layer poster-footer {
+        .c-poster-container_poster-footer {
+          background-image: url('../images/footer.webp');
+          grid-row: 4 / 5;
+          grid-column: 1 / -1;
+          background-position: center;
+          background-size: $image-background-size-auxiliary;
+          background-repeat: no-repeat;
+        }
+      }
+      }
+    }
+  }
+}
+
+

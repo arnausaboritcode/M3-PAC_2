@@ -3,12 +3,57 @@
  * Do not include SCSS code in this file.
  */
 
+/**
+ * Global import for mathematical calculations
+ */
+
+@use "sass:math";
+
+/**
+ * Global import for color calculations
+ */
+
+@use "sass:color";
+
+/**
+ * Import reset and/or normalize styles
+ */
+
+@import "generic/generic";
 
 /**
  * Import variables
  */
 
-@import "variables";
+@import "settings/settings";
+
+/**
+ * Import functions
+ */
+
+ @import "tools/tools";
+
+/**
+ * Import bare HTML elements styling
+ */
+
+ @import "elements/elements";
+
+/**
+ * Import specific UI components
+ */
+
+ @import "components/poster";
+ @import "components/members";
+ @import "components/cup";
+ @import "components/contact";
+
+
+/**
+ * Import custom Bootstrap dependency
+ */
+
+ @import "custom";
 
 /**
  * Import npm dependencies
@@ -25,7 +70,7 @@
  * It's a best practice to use a different partial for each page
  */
 
-@import "layouts/home";
+/*@import "layouts/home";
 
 /**
  * Do NOT include anything else in this file!
