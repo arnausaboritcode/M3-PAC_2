@@ -56,30 +56,31 @@
       -moz-box-shadow: $container-box-shadow;
       overflow: hidden;
       transition: transform 0.5s;
+    }
 
-      .c-cards-container_card-text {
+    .c-cards-container_card .c-cards-container_card-content:hover {
+      transform: transform-content(1.1);
+      -webkit-transform: transform-content(1.1);
+    }
+
+      .c-cards-container_card-content .c-cards-container_card-text {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        padding: $main-padding;
+        padding: $main-spacing;
         line-height: 1.5em;
       }
 
       .c-cards-container_card-text .c-cards-container_card-title {
-        font-size: 1.2rem;
+        font-size: $main-font-size;
         text-align: center;
         font-weight: $font-weight-auxiliary;
       }
 
       .c-cards-container_card-text .c-cards-container_card-paragraph {
-        font-size: 1rem;
+        font-size: $main-font-size;
       }
 
-      &:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-      }
-    }
   }
 }
 }
@@ -87,15 +88,12 @@
 @layer utilities {
 
   .c-cards-container {
-    .c-cards-container_cards-wrapper {
-      .c-cards-container_card {
-        .c-cards-container_card-content .c-cards-container_card-image {
+        .c-cards-container_card .c-cards-container_card-content .c-cards-container_card-image {
           overflow: hidden;
           background-size: $image-background-size-primary;
           background-position: center;
           background-repeat: no-repeat;
         }
-      }
       .c-cards-container_card .c-cards-container_card-content .c-cards-container_card-image {
         &--1 {
           background-image: url('../images/member_one.svg');
@@ -148,4 +146,3 @@
       }
     }
   }
-}

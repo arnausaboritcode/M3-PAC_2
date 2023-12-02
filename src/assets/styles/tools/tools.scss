@@ -1,0 +1,5 @@
+//General SCSS functions
+
+@function transform-content($value) {
+  @return unquote('scale(' + $value + ')');
+}

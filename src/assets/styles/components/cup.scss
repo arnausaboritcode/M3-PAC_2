@@ -1,16 +1,29 @@
 .c-article-container {
   container: article / inline-size;
 
+  p {
+    font-size: $main-font-size;
+  }
+
   .row {
     max-width: 100%;
-    padding: $main-padding;
+    padding: $main-spacing;
 
-    .col {
-      > object {
+
+    .col > object {
         width: $content-max-width;
         max-width:$logo-max-width;
     }
-  }
+
+    .col img {
+      transition: transform 0.5s;
+    }
+
+    .col img:hover {
+      transform: transform-content(1.1);
+
+    }
+
 
     @supports selector(:has(*)) {
       :has(.c-article-container_participate-rule) {
@@ -55,8 +68,8 @@
   }
 
   hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: $main-spacing;
+    margin-bottom: $main-spacing;
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.5);
   }

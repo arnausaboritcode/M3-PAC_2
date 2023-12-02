@@ -15,60 +15,31 @@ $mqMinWidth: 420px;
 
 */
 
-//HomePage SCSS variables
+//General SCSS variables
 
-
-
-//Poster page
+//Measures
 $body-max-width: 1920px;
 $content-max-width: math.percentage(math.div(1536px, $body-max-width));
 $logo-max-width: 550px;
 
+//Spacing
 $element-margin-bottom: 2rem;
-$main-padding: 1rem;
+$main-spacing: 1rem;
 $main-title-margin-top: 10rem;
 
+//Different style utilities
 $container-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
 $container-border-radius: 10px;
-
-$font-family-sans-serif: "Cabin", sans-serif;
-$font-weight-auxiliary: bold;
-$main-color: darken(#68b02b, 5%);
-
-
 $image-background-size-primary: contain;
 $image-background-size-auxiliary: cover;
 
-
-
-
-
-
-
-//Members
-
-
-
-//Our cup
-
-
-//
-
-
-$main-color-opposite: color.invert(#000);
-$primary-color: color.scale(#ff6720, $lightness: 15%);
-$auxiliary-color: #f8f8f8;
-
-$content-padding-top: 8rem;
-$content-padding-left-right: 1.75rem;
-$content-padding-bottom: 5rem;
-$title-padding-bottom: 3rem;
-
+//Font styling
 $font-family-sans-serif: "Cabin", sans-serif;
-$main-font-size: 14px;
-$title-font-size: 2.17rem;
-$main-line-height: 1.5;
-$main-font-weight: 400;
-$auxiliary-font-weight: 700;
+$font-weight-auxiliary: bold;
+$main-font-size: 16px;
 
-$main-transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+//Additionals
+$main-color: color.adjust(#68b02b, $lightness: -5%);
+
+
+
