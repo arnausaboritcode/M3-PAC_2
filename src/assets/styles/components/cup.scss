@@ -6,7 +6,6 @@
   }
 
   .row {
-    max-width: 100%;
     padding: $main-spacing;
 
 
@@ -27,7 +26,7 @@
 
     @supports selector(:has(*)) {
       :has(.c-article-container_participate-rule) {
-        max-width: 80%;
+        max-width: $content-max-width;
         margin-left: auto;
         margin-right: auto;
         border-radius: $container-border-radius;
